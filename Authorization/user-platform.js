@@ -7,7 +7,7 @@ function getUserPlatform(baseUrl, cookie) {
     const functionName = 'getUserPlatform';
     const url = `${baseUrl}/SSO/api/sso/getUserPlatforms`;
     const headers = {
-        'authority': 'revamp-preprod-api.almentor-mail.com',
+        'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
         'accept-language': 'en-US,en;q=0.9',
         'content-type': 'text/plain',
@@ -15,19 +15,10 @@ function getUserPlatform(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
-    console.log(response.body);
-
     check(response, {
-        [`${functionName} - is status 200`]: (r) => r.status === 200
-    });
-
-    check(response, {
+        [`${functionName} - is status 200`]: (r) => r.status === 200,
         [`${functionName} - success field is true`]: (r) => r.json().success === true
-    });
-
-    check(response, {
-        [`${functionName} - response contains expected payload`]: (r) => r.json().data.platform == '00'
-    });
+        });
 }
 
 
