@@ -6,6 +6,8 @@ function getUserAds(baseUrl, cookie) {
     const functionName = 'getUserAds';
 
     const url = `${baseUrl}/deepLinking/api/getUserAd`;
+    console.log(`${functionName} url is `,url);
+
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -15,7 +17,7 @@ function getUserAds(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
-    console.log(response.body);
+    console.log(`${functionName} response is `,response.body);
 
     check(response, {
         [`${functionName} - is status 200`]: (r) => r.status === 200,

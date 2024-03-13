@@ -7,6 +7,8 @@ function login(baseUrl, cookie) {
     const functionName = 'login';
 
     const url = `${baseUrl}/SSO/api/sso/login`;
+    console.log(`${functionName} url is `,url);
+
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -16,6 +18,8 @@ function login(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
+    console.log(`${functionName} response is `,response.body);
+
     check(response, {
         [`${functionName} - is login status 200`]: (r) => r.status === 200
     });

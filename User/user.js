@@ -6,6 +6,8 @@ function getUserWishlist(baseUrl, cookie) {
     const functionName = 'getUserWishlist';
 
     const url = `${baseUrl}/getUser/api/wishList/all/page`;
+    console.log(`${functionName} url is `,url);
+
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -15,7 +17,8 @@ function getUserWishlist(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
-    const expectedSize = 10; 
+
+    console.log(`${functionName} response is `,response.body);
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
         [`${functionName} - response success field is true`]: (r) => r.json().success === true,
@@ -28,6 +31,8 @@ function getAllInterestsByLanguageId(baseUrl, cookie) {
     const functionName = 'getAllInterestsByLanguageId';
 
     const url = `${baseUrl}/getUser/api/users/GetAllInterestsByLanguageId`;
+    console.log(`${functionName} url is `,url);
+
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -37,7 +42,7 @@ function getAllInterestsByLanguageId(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
-    console.log
+    console.log(`${functionName} response is `,response.body);
     check(response, {
         [`${functionName} - response is not null`]: (r) => r !== null,
         [`${functionName} - response contains array with size greater than expected`]: (r) => r.json().data != null,

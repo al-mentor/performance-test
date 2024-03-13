@@ -6,6 +6,8 @@ function authorize(baseUrl, cookie) {
     
     const functionName = 'authorize';
     const url = `${baseUrl}/authorize/api/sso/authorize`;
+    console.log(`${functionName} url is `,url);
+
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -28,6 +30,8 @@ function getUserInfo(baseUrl, cookie) {
     
     const functionName = 'getUserInfo';
     const url = `${baseUrl}/SSO/api/sso/getUserPlatforms`;
+    console.log(`${functionName} url is `,url);
+
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -37,6 +41,8 @@ function getUserInfo(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
+    console.log(`${functionName} response is `,response.body);
+
     check(response, {
         [`${functionName} - is status 200`]: (r) => r.status === 200,
         [`${functionName} - success field is true`]: (r) => r.json().success === true

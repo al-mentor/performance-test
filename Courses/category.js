@@ -6,6 +6,8 @@ function topTemp(baseUrl, cookie) {
     const functionName = 'topTemp';
  
     const url = `${baseUrl}/getCategory/api/categories/topTemp`;
+    console.log(`${functionName} url is `,url);
+
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -15,6 +17,8 @@ function topTemp(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
+    console.log(`${functionName} response is `,response.body);
+
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
         [`${functionName} - response success field is true`]: (r) => r.json().success === true

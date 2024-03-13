@@ -6,6 +6,7 @@ function getUserPlatform(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJyZWRpcmVjdC1jZW50ZXIiLCJyZWNlaXZlciI6IiIsInRpbWVzdGFtcCI6IjE3MDk5OTY4ODY4NTMiLCJwbGF0Zm9ybSI6bnVsbCwidXVpZCI6ImZjMDg2ODNjLWJiNmMtNDI2MC05MDZlLWVkOGNmMmI1MTdkZSJ9.e30=.e30=.9679af21419099aaa11097770ca4b53af84a6ed5dbe1c450f1e272be91769c68';
     const functionName = 'getUserPlatform';
     const url = `${baseUrl}/SSO/api/sso/getUserPlatforms`;
+    console.log(`${functionName} url is `,url);
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -15,6 +16,8 @@ function getUserPlatform(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
+    console.log(`${functionName} response is `,response.body);
+
     check(response, {
         [`${functionName} - is status 200`]: (r) => r.status === 200,
         [`${functionName} - success field is true`]: (r) => r.json().success === true
