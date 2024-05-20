@@ -18,17 +18,16 @@ To run these performance tests, you need to have k6 installed on your machine. F
 k6 run .\{{scenario-script-file}}.js
 
 
-##Total RPM Calculation
+## Total RPM Calculation
 
 To find the overall average RPM for the entire test duration eg.:
-Ramp-up Stage (1 minute): 10 RPM
-Steady Stage (3 minutes): 20 RPM
-Ramp-down Stage (1 minute): 10 RPM
-Total requests in the entire duration:
-(10 RPM×1 minute)+(20 RPM×3 minutes)+(10 RPM×1 minute)=10+60+10=80 requests
-(10RPM×1minute)+(20RPM×3minutes)+(10RPM×1minute)=10+60+10=80requests
-Total test duration is 5 minutes.
+- Ramp-up Stage (1 minute): 10 RPM
+- Steady Stage (3 minutes): 20 RPM
+- Ramp-down Stage (1 minute): 10 RPM
+**Total requests in the entire duration:**
+- (10 RPM×1 minute)+(20 RPM×3 minutes)+(10 RPM×1 minute)=10+60+10=80 requests
 
+**Total test duration is 5 minutes.**
 Average RPM over the entire test duration:
 80 requests / 5 minutes= 16 RPM
 
