@@ -52,6 +52,6 @@ function getAllInterestsByLanguageId(baseUrl, cookie) {
 }
 
 
-module.exports = {
+export {
     getUserWishlist,getAllInterestsByLanguageId
   }; 

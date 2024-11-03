@@ -55,6 +55,6 @@ function getUnreadMsg(baseUrl, cookie) {
 
 
 
-module.exports = {
+export {
     getUserNotification, getUnreadMsg
 }; 

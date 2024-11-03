@@ -36,6 +36,6 @@ function getPlans(baseUrl, cookie) {
     };
 }
 
-module.exports = {
+export {
     getPlans
 };

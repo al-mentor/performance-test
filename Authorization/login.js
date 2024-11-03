@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check } from 'k6';
 
 
-function login(baseUrl, cookie) {
+export function login(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJhY2NvdW50IiwicmVjZWl2ZXIiOiJsb2dpbiIsInRpbWVzdGFtcCI6IjE3MDk5OTYxNjUzMDEiLCJwbGF0Zm9ybSI6bnVsbCwidXVpZCI6IjAwMDAtMDAwMC0wMDAwLTAwMDAifQ==.eyJlbWFpbCI6InNhbGFoLmF5bWFuK2xvYWRAYWxtZW50b3IubmV0IiwicGFzc3dvcmQiOiJBbG1lbnRvckAxMjMiLCJwbGF0Zm9ybSI6IjAwIiwic3ViRG9tYWluIjoiYmV0YS1wcmVwcm9kIn0=.e30=.5b34526c90ff8a4441287c7f45fd0186d9d57ccac4a55746b30200edbb86b21d';
     const functionName = 'login';
 
@@ -48,7 +48,3 @@ function login(baseUrl, cookie) {
         cookies: setCookieHeaders
     };
 }
-
-module.exports = {
-    login
-  };

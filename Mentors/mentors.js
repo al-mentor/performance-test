@@ -117,7 +117,7 @@ function getMentorPageViews(baseUrl, cookie) {
         response
     };
 }
-module.exports = {
+export {
     getMentors,
     getMentorDetails,
     getMentorPageViews

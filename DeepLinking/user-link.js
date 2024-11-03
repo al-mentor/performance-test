@@ -27,6 +27,6 @@ function getUserAds(baseUrl, cookie) {
 
 
 
-module.exports = {
+export {
     getUserAds
   }; 

@@ -37,6 +37,6 @@ function getTags(baseUrl, cookie) {
 }
 
 
-module.exports = {
+export {
      getTags
 };

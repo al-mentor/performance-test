@@ -309,7 +309,7 @@ function getCourseIdPermanentLink(baseUrl, cookie) {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
     };
 
-    const response = http.post(url, payload, { headers });
+    const response = http.post(url, payload, {headers});
     console.log(`${functionName} response is `, response.body);
 
     check(response, {
@@ -344,7 +344,7 @@ function getCourseCategories(baseUrl, cookie) {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
     };
 
-    const response = http.post(url, payload, { headers });
+    const response = http.post(url, payload, {headers});
     console.log(`${functionName} response is `, response.body);
 
     check(response, {
@@ -380,7 +380,7 @@ function getBenefitsAndPrerequisites(baseUrl, cookie) {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
     };
 
-    const response = http.post(url, payload, { headers });
+    const response = http.post(url, payload, {headers});
     console.log(`${functionName} response is `, response.body);
 
     check(response, {
@@ -389,7 +389,6 @@ function getBenefitsAndPrerequisites(baseUrl, cookie) {
         [`${functionName} - response is not null`]: (r) => r !== null,
     });
 }
-
 
 
 function getRelatedCourses(baseUrl, cookie) {
@@ -417,7 +416,7 @@ function getRelatedCourses(baseUrl, cookie) {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
     };
 
-    const response = http.post(url, payload, { headers });
+    const response = http.post(url, payload, {headers});
     console.log(`${functionName} response is `, response.body);
 
     check(response, {
@@ -426,7 +425,6 @@ function getRelatedCourses(baseUrl, cookie) {
         [`${functionName} - response is not null`]: (r) => r !== null,
     });
 }
-
 
 
 function getCourseCurriculum(baseUrl, cookie) {
@@ -454,7 +452,7 @@ function getCourseCurriculum(baseUrl, cookie) {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36'
     };
 
-    const response = http.post(url, payload, { headers });
+    const response = http.post(url, payload, {headers});
     console.log(`${functionName} response is `, response.body);
 
     check(response, {
@@ -464,10 +462,11 @@ function getCourseCurriculum(baseUrl, cookie) {
     });
 }
 
-module.exports = {
+export {
     getFeaturedCourses,
     myProgressCarousel,
-    getMostViewedCourses: getPopularCourses,
+    getMostViewedCourses,
+    getPopularCourses,
     getPickOfTheDay,
     getNewCourses,
     getCourseDetails,

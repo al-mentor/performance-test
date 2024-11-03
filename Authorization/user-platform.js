@@ -25,6 +25,6 @@ function getUserPlatform(baseUrl, cookie) {
 }
 
 
-module.exports = {
+export {
     getUserPlatform
 }; 

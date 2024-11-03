@@ -45,6 +45,6 @@ function getHeroBanner(baseUrl, cookie) {
     };
 }
 
-module.exports = {
+export {
     getHeroBanner
 };

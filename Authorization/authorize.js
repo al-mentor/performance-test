@@ -51,6 +51,6 @@ function getUserInfo(baseUrl, cookie) {
 
 
 
-module.exports = {
+export {
     authorize,getUserInfo
   }; 

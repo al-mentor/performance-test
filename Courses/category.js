@@ -63,6 +63,6 @@ function getCategories(baseUrl, cookie) {
 
 
 
-module.exports = {
+export {
     topTemp,getCategories
   }; 
