@@ -3,7 +3,7 @@ import {Config} from '../../config.js';
 import {
     getBenefitsAndPrerequisites,
     getCourseCategories,
-    getCourseCurriculum,
+    getCourseCurriculum, getCourseIdPermanentLink,
     getMostViewedCourses,
     getRelatedCourses
 } from "../../Courses/course.js";
@@ -84,6 +84,7 @@ function authenticatedUserFlow(cookie) {
     getCourseCurriculum(baseUrl, cookie);
     getMentorDetails(baseUrl, cookie);
     getMentorPageViews(baseUrl, cookie);
+    getCourseIdPermanentLink(baseUrl,cookie);
 
 }
 
@@ -95,6 +96,7 @@ function unauthenticatedUserFlow() {
     getCourseCurriculum(baseUrl, initialCookie);
     getMentorDetails(baseUrl, initialCookie);
     getMentorPageViews(baseUrl, initialCookie);
+    getCourseIdPermanentLink(baseUrl,initialCookie);
 }
 
 export default function (data) {

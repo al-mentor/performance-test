@@ -5,7 +5,6 @@ function getHeroBanner(baseUrl, cookie) {
     const functionName = 'getHeroBanner';
 
     const url = `${baseUrl}/api/new-orchestrator/banner/api/getHeroBanner`;
-    console.log(`${functionName} url is `, url);
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
