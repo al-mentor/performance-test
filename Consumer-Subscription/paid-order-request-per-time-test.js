@@ -22,7 +22,6 @@ export default function () {
     parsedData.forEach(row => {
         const [userId] = row;
 
-        console.log(`userId:  ${userId}`);
 
         payload['userId'] = userId;
 
@@ -38,12 +37,9 @@ export default function () {
 
         const url = 'https://consumer-subscription.almentor-mail.com/paid-order';
 
-        console.log("url: " + url);
-        console.log("body: " + JSON.stringify(payload));
 
         const response = http.post(url, JSON.stringify(payload), params);
 
-        console.log(`paid order response ${response.status} ${response.body}`);
 
         check(response, {
             'status is 200': (r) => r.status === 200,

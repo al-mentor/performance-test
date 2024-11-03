@@ -6,7 +6,7 @@ function topTemp(baseUrl, cookie) {
     const functionName = 'topTemp';
  
     const url = `${baseUrl}/api/new-orchestrator/getCategory/api/categories/topTemp`;
-    console.log(`${functionName} url is `,url);
+    
 
     const headers = {
         'authority': baseUrl,
@@ -17,7 +17,7 @@ function topTemp(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
-    console.log(`${functionName} response is `,response.body);
+    
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -32,7 +32,7 @@ function getCategories(baseUrl, cookie) {
     const functionName = 'getCategories';
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/category`;
-    console.log(`${functionName} url is `,url);
+    
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -53,7 +53,7 @@ function getCategories(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
-    console.log(`${functionName} response is `,response.body);
+    
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,

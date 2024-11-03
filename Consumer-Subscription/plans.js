@@ -5,7 +5,7 @@ function getPlans(baseUrl, cookie) {
     const functionName = 'getPlans';
 
     const url = `${baseUrl}/api/plan-svc/plans`;
-    console.log(`${functionName} url is `, url);
+    
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -25,7 +25,7 @@ function getPlans(baseUrl, cookie) {
     };
 
     const response = http.get(url, { headers });
-    console.log(`${functionName} response is `, response.body);
+    
 
     check(response, {
         [`${functionName} - is status 200`]: (r) => r.status === 200

@@ -58,12 +58,8 @@ export default function () {
         },
     };
 
-    console.log("url"+url);
-    console.log("body"+JSON.stringify(payload));
 
     const res = http.post(url, JSON.stringify(payload), params);
-    console.log("response body"+res.body);
-    console.log("response status"+res.status);
 
     check(res, {
         'is status 200': (r) => r.status === 200,
@@ -93,12 +89,9 @@ function handleResponse(response, paymentMethod) {
     const result = check(response, checks);
 
     if (!result) {
-        console.error(`Test failed for payment method: ${paymentMethod}`);
     } else {
         if (response.link) {
-            console.log(`Payment link: ${response.link}`);
         } else if (response.code) {
-            console.log(`Payment code: ${response.code}`);
         }
     }
 }

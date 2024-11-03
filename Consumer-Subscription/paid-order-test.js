@@ -29,16 +29,13 @@ export default function () {
     const currentIndex = globalIndex + (__VU - 1);
 
     if (currentIndex >= userIds.length) {
-        console.error(`No more user IDs available for VU ${__VU}`);
         return;
     }
 
-    console.log(`VU: ${__VU}, userIds: ${userIds.length}, userIds ${userIds[currentIndex]}`);
 
     const userId = userIds[currentIndex];
     globalIndex++;
 
-    console.log(`VU: ${__VU}, userIdIndex: ${currentIndex}, userId: ${userId}`);
 
 
     const params = {
@@ -51,9 +48,6 @@ export default function () {
     };
 
     const url = 'https://consumer-subscription.almentor-mail.com/paid-order';
-
-    console.log("url: " + url);
-    console.log("body: " + JSON.stringify(payload));
 
     const res = http.post(url, JSON.stringify(payload), params);
 

@@ -6,7 +6,7 @@ function authorize(baseUrl, cookie) {
     
     const functionName = 'authorize';
     const url = `${baseUrl}/api/new-orchestrator/authorize/api/sso/authorize`;
-    console.log(`${functionName} url is `,url);
+    
 
     const headers = {
         'authority': baseUrl,
@@ -17,7 +17,6 @@ function authorize(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
-    console.log('Authorize response: ' + response.body);
 
     check(response, {
         [`${functionName} - is status 200`]: (r) => r.status === 200,
@@ -30,7 +29,7 @@ function getUserInfo(baseUrl, cookie) {
     
     const functionName = 'getUserInfo';
     const url = `${baseUrl}/api/new-orchestrator/SSO/api/sso/GetUserInfo`;
-    console.log(`${functionName} url is `,url);
+    
 
     const headers = {
         'authority': baseUrl,
@@ -41,7 +40,7 @@ function getUserInfo(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
-    console.log(`${functionName} response is `,response.body);
+    
 
     check(response, {
         [`${functionName} - is status 200`]: (r) => r.status === 200,

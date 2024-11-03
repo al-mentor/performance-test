@@ -5,7 +5,7 @@ function getHeroBanner(baseUrl, cookie) {
     const functionName = 'getHeroBanner';
 
     const url = `${baseUrl}/api/new-orchestrator/banner/api/getHeroBanner`;
-    console.log(`${functionName} url is `, url);
+    
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -28,7 +28,6 @@ function getHeroBanner(baseUrl, cookie) {
     let data = 'eyJzZW5kZXIiOiJiYW5uZXIiLCJyZWNlaXZlciI6ImdldC1iYW5uZXIiLCJ0aW1lc3RhbXAiOiIxNzMwNjI2NjU3MTc1IiwicGxhdGZvcm0iOm51bGwsInV1aWQiOiIwMDAwLTAwMDAtMDAwMC0wMDAwIn0=.eyJsYW5ndWFnZUlkIjoyfQ==.e30=.0fd77f2e5832ee88ea3c9ebc4201b62922a621fd3a53ca0b152468258779288b';
 
     const response = http.post(url, data, { headers });
-    console.log(`${functionName} response is ${JSON.stringify(response.body)}`);
 
 
     try {
@@ -38,7 +37,6 @@ function getHeroBanner(baseUrl, cookie) {
             [`${functionName} - response body has success true`]: (r) => responseBody.success === true,
         });
     } catch (error) {
-        console.log(`${functionName} - error parsing response as JSON: ${error}`);
     }
     return {
         response

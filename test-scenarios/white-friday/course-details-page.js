@@ -3,69 +3,24 @@ import {Config} from '../../config.js';
 import {
     getBenefitsAndPrerequisites,
     getCourseCategories,
-    getCourseCurriculum,
-    getMostViewedCourses,
+    getCourseCurriculum, getCourseIdPermanentLink,
     getRelatedCourses
 } from "../../Courses/course.js";
 import {getTags} from "../../Courses/tags.js";
 import {getMentorDetails, getMentorPageViews} from "../../Mentors/mentors.js";
-export let options = {
-    stages: [
-        {
-            duration: '1h',
-            target: 20    // 20% of 100
-        },
-        {
-            duration: '1h',
-            target: 40    // 40% of 100
-        },
-        {
-            duration: '2h',
-            target: 60    // 60% of 100
-        },
-        {
-            duration: '2h',
-            target: 80    // 80% of 100
-        },
-        {
-            duration: '2h',
-            target: 100   // 100% - peak load
-        },
-        {
-            duration: '1h',
-            target: 60    // reduce to 60%
-        },
-        {
-            duration: '1h',
-            target: 40    // stable phase at 40%
-        },
-        {
-            duration: '1h',
-            target: 20    // start ramp down
-        },
-        {
-            duration: '5m',
-            target: 16    // 80% of previous
-        },
-        {
-            duration: '5m',
-            target: 12    // 60% of previous
-        },
-        {
-            duration: '5m',
-            target: 8     // 40% of previous
-        },
-        {
-            duration: '5m',
-            target: 4     // 20% of previous
-        },
-        {
-            duration: '5m',
-            target: 0     // complete ramp down
-        }
-    ]
-};
 
+export const options = {
+    scenarios: {
+        constant_request_rate: {
+            executor: 'constant-arrival-rate',
+            rate: 100,
+            timeUnit: '1m', // 1000 iterations per second, i.e. 1000 RPS
+            duration: '6h',
+            preAllocatedVUs: 10, // how large the initial pool of VUs would be
+            maxVUs: 20, // if the preAllocatedVUs are not enough, we can initialize more
+        },
+    },
+};
 
 
 const baseUrl = Config.BASE_URL;
@@ -84,6 +39,7 @@ function authenticatedUserFlow(cookie) {
     getCourseCurriculum(baseUrl, cookie);
     getMentorDetails(baseUrl, cookie);
     getMentorPageViews(baseUrl, cookie);
+    getCourseIdPermanentLink(baseUrl, cookie);
 
 }
 
@@ -95,6 +51,8 @@ function unauthenticatedUserFlow() {
     getCourseCurriculum(baseUrl, initialCookie);
     getMentorDetails(baseUrl, initialCookie);
     getMentorPageViews(baseUrl, initialCookie);
+    getCourseIdPermanentLink(baseUrl, initialCookie);
+
 }
 
 export default function (data) {
