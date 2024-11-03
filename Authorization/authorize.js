@@ -5,7 +5,7 @@ function authorize(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkIiwicmVjZWl2ZXIiOiJhdXRob3JpemUiLCJ0aW1lc3RhbXAiOiIxNzA5OTk2ODg4MDY3IiwicGxhdGZvcm0iOiIwMCIsInV1aWQiOiJmYzA4NjgzYy1iYjZjLTQyNjAtOTA2ZS1lZDhjZjJiNTE3ZGUifQ==.eyJwbGF0Zm9ybSI6IjAwIiwic3ViRG9tYWluIjpudWxsfQ==.e30=.d8278ad086fec66e27e1941a5599f4cb0db8361459e885e001fc0da9e0b11b27';
     
     const functionName = 'authorize';
-    const url = `${baseUrl}/authorize/api/sso/authorize`;
+    const url = `${baseUrl}/api/new-orchestrator/authorize/api/sso/authorize`;
     console.log(`${functionName} url is `,url);
 
     const headers = {
@@ -29,7 +29,7 @@ function getUserInfo(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJhdXRoIiwicmVjZWl2ZXIiOiJsb2dvdXQiLCJ0aW1lc3RhbXAiOiIxNzA5OTk2ODg4Mzg5IiwicGxhdGZvcm0iOiIwMCIsInV1aWQiOiJmYzA4NjgzYy1iYjZjLTQyNjAtOTA2ZS1lZDhjZjJiNTE3ZGUifQ==.e30=.e30=.71cb662c59369ac68ace540a22adfc9b748d205bcdf8212ce53d459795a2ae83';
     
     const functionName = 'getUserInfo';
-    const url = `${baseUrl}/SSO/api/sso/getUserPlatforms`;
+    const url = `${baseUrl}/api/new-orchestrator/SSO/api/sso/GetUserInfo`;
     console.log(`${functionName} url is `,url);
 
     const headers = {

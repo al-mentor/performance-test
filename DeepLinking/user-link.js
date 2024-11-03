@@ -5,7 +5,7 @@ function getUserAds(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkIiwicmVjZWl2ZXIiOiJhdXRob3JpemUiLCJ0aW1lc3RhbXAiOiIxNzA5OTk2ODg4MDY3IiwicGxhdGZvcm0iOiIwMCIsInV1aWQiOiJmYzA4NjgzYy1iYjZjLTQyNjAtOTA2ZS1lZDhjZjJiNTE3ZGUifQ==.eyJwbGF0Zm9ybSI6IjAwIiwic3ViRG9tYWluIjpudWxsfQ==.e30=.d8278ad086fec66e27e1941a5599f4cb0db8361459e885e001fc0da9e0b11b27';
     const functionName = 'getUserAds';
 
-    const url = `${baseUrl}/deepLinking/api/getUserAd`;
+    const url = `${baseUrl}/api/new-orchestrator/deepLinking/api/getUserAd`;
     console.log(`${functionName} url is `,url);
 
     const headers = {

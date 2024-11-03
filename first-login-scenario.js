@@ -1,12 +1,18 @@
-import { sleep } from 'k6';
-import { login } from './Authorization/login.js';
-import { getUserPlatform } from './Authorization/user-platform.js';
-import { authorize,getUserInfo } from './Authorization/authorize.js';
-import { getUserAds } from './DeepLinking/user-link.js';
-import { getUserNotification,getUnreadMsg } from './User/notification.js';
-import { getFeaturedCourses,myProgressCarousel,getMostViewedCourses,getPickOfTheDay,getNewCourses,getCourseDetails} from './Courses/course.js';
-import { topTemp } from './Courses/category.js';
-import { getUserWishlist,getAllInterestsByLanguageId } from './User/user.js';
+import {sleep} from 'k6';
+import {login} from './Authorization/login.js';
+import {getUserPlatform} from './Authorization/user-platform.js';
+import {authorize, getUserInfo} from './Authorization/authorize.js';
+import {getUserAds} from './DeepLinking/user-link.js';
+import {
+    getCourseDetails,
+    getFeaturedCourses,
+    getMostViewedCourses,
+    getNewCourses,
+    getPickOfTheDay,
+    myProgressCarousel
+} from './Courses/course.js';
+import {topTemp} from './Courses/category.js';
+import {getAllInterestsByLanguageId, getUserWishlist} from './User/user.js';
 
 export let options = {
     stages: [

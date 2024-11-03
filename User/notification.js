@@ -32,7 +32,7 @@ function getUnreadMsg(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJoZWFkZXItbWVzc2FnZXMiLCJyZWNlaXZlciI6ImdldFVucmVhZE1zZyIsInRpbWVzdGFtcCI6IjE3MTAyODEwMDI5NTciLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6ImZjMDg2ODNjLWJiNmMtNDI2MC05MDZlLWVkOGNmMmI1MTdkZSJ9.eyJpc0xlYXJuZXIiOnRydWV9.e30=.d5e898bfe9d4862839b938bcdc1de912319f3b125bba4cd54e2753b195050451';
     const functionName = 'getUnreadMsg';
     baseUrl=baseUrl.replace("alrevampapi", "clientpapi").replace('revamp-preprod-api','revamp-preprod-client-orchestrator');
-    const url = `${baseUrl}/api/chats/getUnreadMsg`;
+    const url = `${baseUrl}/api/orchestrator/api/chats/getUnreadMsg`;
     console.log(`${functionName} url is `,url);
 
     const headers = {

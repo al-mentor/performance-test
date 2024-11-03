@@ -6,7 +6,7 @@ function login(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJhY2NvdW50IiwicmVjZWl2ZXIiOiJsb2dpbiIsInRpbWVzdGFtcCI6IjE3MDk5OTYxNjUzMDEiLCJwbGF0Zm9ybSI6bnVsbCwidXVpZCI6IjAwMDAtMDAwMC0wMDAwLTAwMDAifQ==.eyJlbWFpbCI6InNhbGFoLmF5bWFuK2xvYWRAYWxtZW50b3IubmV0IiwicGFzc3dvcmQiOiJBbG1lbnRvckAxMjMiLCJwbGF0Zm9ybSI6IjAwIiwic3ViRG9tYWluIjoiYmV0YS1wcmVwcm9kIn0=.e30=.5b34526c90ff8a4441287c7f45fd0186d9d57ccac4a55746b30200edbb86b21d';
     const functionName = 'login';
 
-    const url = `${baseUrl}/SSO/api/sso/login`;
+    const url = `${baseUrl}/api/new-orchestrator/SSO/api/sso/login`;
     console.log(`${functionName} url is `,url);
 
     const headers = {
@@ -23,6 +23,30 @@ function login(baseUrl, cookie) {
     check(response, {
         [`${functionName} - is login status 200`]: (r) => r.status === 200
     });
+
+    // Extract Set-Cookie headers
+    const setCookieHeaders = response.headers['Set-Cookie'];
+    if (setCookieHeaders) {
+        console.log('Set-Cookie headers:', setCookieHeaders);
+
+        if (Array.isArray(setCookieHeaders)) {
+            setCookieHeaders.forEach(cookieStr => {
+                console.log('Cookie:', cookieStr);
+            });
+        } else {
+            console.log('Cookie:', setCookieHeaders);
+        }
+    }
+
+    check(response, {
+        [`${functionName} - is login status 200`]: (r) => r.status === 200,
+        [`${functionName} - has Set-Cookie header`]: (r) => r.headers['Set-Cookie'] !== undefined
+    });
+
+    return {
+        response,
+        cookies: setCookieHeaders
+    };
 }
 
 module.exports = {
