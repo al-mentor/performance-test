@@ -16,59 +16,60 @@ import {getMentors} from "../../Mentors/mentors.js";
 import {topTemp} from "../../Courses/category.js";
 import {getUnreadMsg} from "../../User/notification.js";
 
+
 export let options = {
     stages: [
         {
-            duration: '5m', // 0-5 minutes
-            target: 6 // 10% of 60 RPM
+            duration: '1h',
+            target: 20    // 20% of 100
         },
         {
-            duration: '5m', // 5-10 minutes
-            target: 12 // 20% of 60 RPM
+            duration: '1h',
+            target: 40    // 40% of 100
         },
         {
-            duration: '5m', // 10-15 minutes
-            target: 18 // 30% of 60 RPM
+            duration: '2h',
+            target: 60    // 60% of 100
         },
         {
-            duration: '5m', // 15-20 minutes
-            target: 24 // 40% of 60 RPM
+            duration: '2h',
+            target: 80    // 80% of 100
         },
         {
-            duration: '5m', // 20-25 minutes
-            target: 30 // 50% of 60 RPM
+            duration: '2h',
+            target: 100   // 100% - peak load
         },
         {
-            duration: '5m', // 25-30 minutes
-            target: 60 // 100% of 60 RPM
+            duration: '1h',
+            target: 60    // reduce to 60%
         },
         {
-            duration: '11h', // stable phase
-            target: 60 // maintain 60 RPM for 11 hours
+            duration: '1h',
+            target: 40    // stable phase at 40%
         },
         {
-            duration: '5m', // 0-5 minutes of ramp down
-            target: 60 // 100% of 60 RPM
+            duration: '1h',
+            target: 20    // start ramp down
         },
         {
-            duration: '5m', // 5-10 minutes of ramp down
-            target: 48 // 80% of 60 RPM
+            duration: '5m',
+            target: 16    // 80% of previous
         },
         {
-            duration: '5m', // 10-15 minutes of ramp down
-            target: 36 // 60% of 60 RPM
+            duration: '5m',
+            target: 12    // 60% of previous
         },
         {
-            duration: '5m', // 15-20 minutes of ramp down
-            target: 24 // 40% of 60 RPM
+            duration: '5m',
+            target: 8     // 40% of previous
         },
         {
-            duration: '5m', // 20-25 minutes of ramp down
-            target: 12 // 20% of 60 RPM
+            duration: '5m',
+            target: 4     // 20% of previous
         },
         {
-            duration: '5m', // 25-30 minutes of ramp down
-            target: 0 // 0% of 60 RPM
+            duration: '5m',
+            target: 0     // complete ramp down
         }
     ]
 };
