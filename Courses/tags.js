@@ -6,6 +6,7 @@ function getTags(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getTag/api/common/tags`;
     const functionName = 'getTag';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -26,7 +27,7 @@ function getTags(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, { headers });
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,

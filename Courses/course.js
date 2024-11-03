@@ -6,6 +6,7 @@ function getFeaturedCourses(baseUrl, cookie) {
 
     const url = `${baseUrl}/getCourse/api/courses/featured-courses`;
     const functionName = 'getFeaturedCourses';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'authority': baseUrl,
@@ -16,7 +17,7 @@ function getFeaturedCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     const expectedSize = 10;
     check(response, {
@@ -33,6 +34,7 @@ function myProgressCarousel(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourseProgres/api/b2b/my-progress-carousel`;
     const functionName = 'myProgressCarousel';
+    console.log(`${functionName} url is `, url);
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -42,7 +44,7 @@ function myProgressCarousel(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -56,6 +58,7 @@ function getMostViewedCourses(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6InBvcHVsYXItY291cnNlcyIsInRpbWVzdGFtcCI6IjE3MTAyNzc3ODAzMDIiLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6ImZjMDg2ODNjLWJiNmMtNDI2MC05MDZlLWVkOGNmMmI1MTdkZSJ9.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImZpbHRlck1hcCI6e319.e30=.56d892fef20bca9e898533011283c4dbff7efa9c683e5d9505cc2d45835c6f1f';
     const functionName = 'getMostViewedCourses';
     const url = `${baseUrl}/getCourse/api/courses/most-viewed-courses`;
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'authority': baseUrl,
@@ -66,7 +69,7 @@ function getMostViewedCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     const expectedSize = 10;
     check(response, {
@@ -81,6 +84,7 @@ function getPopularCourses(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6InBvcHVsYXItY291cnNlcyIsInRpbWVzdGFtcCI6IjE3MTAyNzc3ODAzMDQiLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6ImZjMDg2ODNjLWJiNmMtNDI2MC05MDZlLWVkOGNmMmI1MTdkZSJ9.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImZpbHRlck1hcCI6e319.e30=.ca1178cd8ff407d2eaf3ad6e8d58336f626d784d6d135039dbf4ef613383d4f6';
     const functionName = 'getMostViewedCourses';
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/popular-courses`;
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'authority': baseUrl,
@@ -91,7 +95,7 @@ function getPopularCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     const expectedSize = 10;
     check(response, {
@@ -108,6 +112,7 @@ function getNewCourses(baseUrl, cookie) {
 
     const url = `${baseUrl}/getCourse/api/courses/getNewCourses`;
 
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'authority': baseUrl,
@@ -118,7 +123,7 @@ function getNewCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     const expectedSize = 10;
     check(response, {
@@ -135,6 +140,7 @@ function getPickOfTheDay(baseUrl, cookie) {
     const functionName = 'getPickOfTheDay';
 
     const url = `${baseUrl}/getCourse/api/courses/picksOfTheDay`;
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'authority': baseUrl,
@@ -145,7 +151,7 @@ function getPickOfTheDay(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -160,6 +166,7 @@ function getCourseDetails(baseUrl) {
 
     const url = `${baseUrl}/Home/graphql`;
 
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'authority': baseUrl,
@@ -170,7 +177,7 @@ function getCourseDetails(baseUrl) {
 
     const response = http.post(url, payload, {headers});
 
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -183,6 +190,7 @@ function getCourseDiscovery(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/courses-discovery`;
     const functionName = 'getCourseDiscovery';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'authority': baseUrl,
@@ -204,7 +212,7 @@ function getCourseDiscovery(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -218,6 +226,7 @@ function getTrendingCourses(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/trending-courses`;
     const functionName = 'getTrendingCourses';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'authority': baseUrl,
@@ -228,7 +237,7 @@ function getTrendingCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     const expectedSize = 10;
     check(response, {
@@ -244,6 +253,7 @@ function getFilterCourses(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/filter`;
     const functionName = 'getFilterCourses';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -264,7 +274,7 @@ function getFilterCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -279,6 +289,7 @@ function getCourseIdPermanentLink(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/id/permanentLink`;
     const functionName = 'getCourseIdPermanentLink';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -299,7 +310,7 @@ function getCourseIdPermanentLink(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -313,6 +324,7 @@ function getCourseCategories(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/id/category`;
     const functionName = 'getCourse';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -333,7 +345,7 @@ function getCourseCategories(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -348,6 +360,7 @@ function getBenefitsAndPrerequisites(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/BenefitsAndPrerequisites`;
     const functionName = 'getBenefitsAndPrerequisites';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -368,7 +381,7 @@ function getBenefitsAndPrerequisites(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -383,6 +396,7 @@ function getRelatedCourses(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/related`;
     const functionName = 'getRelatedCourses';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -403,7 +417,7 @@ function getRelatedCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -418,6 +432,7 @@ function getCourseCurriculum(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/orchestrator/api/courses/simple/curriculum`;
     const functionName = 'getCourseCurriculum';
+    console.log(`${functionName} url is `, url);
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -438,7 +453,7 @@ function getCourseCurriculum(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
