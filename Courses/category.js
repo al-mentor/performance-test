@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check } from 'k6';
 
 function topTemp(baseUrl, cookie) {
-    const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6InRvcFRlbXAiLCJ0aW1lc3RhbXAiOiIxNzEwMjc3NzgwMjk5IiwicGxhdGZvcm0iOiIwMCIsInV1aWQiOiJmYzA4NjgzYy1iYjZjLTQyNjAtOTA2ZS1lZDhjZjJiNTE3ZGUifQ==.eyJsYW5ndWFnZUlkIjoyfQ==.e30=.a8d042fdf43c892498334606b7b344789f4f80e24c4a7a313c010cf67b0fc1db';
+    const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6InRvcFRlbXAiLCJ0aW1lc3RhbXAiOiIxNzMwNjQyMjg3OTM5IiwicGxhdGZvcm0iOiIwMCIsInV1aWQiOiIxN2UwYTg4ZS1lODM5LTRiMTYtODllMi05ZDA0MGM0OWIyYmQifQ==.eyJsYW5ndWFnZUlkIjoyfQ==.e30=.80a077d7ad88c2539174696b76804392697efc7b9d57da8cbd661dc09cfdd4d3';
     const functionName = 'topTemp';
  
     const url = `${baseUrl}/api/new-orchestrator/getCategory/api/categories/topTemp`;

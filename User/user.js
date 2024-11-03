@@ -2,7 +2,7 @@ import http from 'k6/http';
 import { check } from 'k6';
 
 function getUserWishlist(baseUrl, cookie) {
-    const payload = 'eyJzZW5kZXIiOiJteS1wcm9ncmVzcyIsInJlY2VpdmVyIjoiYWxsIiwidGltZXN0YW1wIjoiMTcxMDI3Nzc4MDMwOCIsInBsYXRmb3JtIjoiMDAiLCJ1dWlkIjoiZmMwODY4M2MtYmI2Yy00MjYwLTkwNmUtZWQ4Y2YyYjUxN2RlIn0=.eyJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImxhbmd1YWdlSWQiOjJ9.e30=.88c2df885081c7dbe4a3a3fd54cbf268d0cfd88e436cc28e397e42b2e3f85f44';
+    const payload = 'eyJzZW5kZXIiOiJteS1wcm9ncmVzcyIsInJlY2VpdmVyIjoiYWxsIiwidGltZXN0YW1wIjoiMTczMDY1MDYyOTMwOSIsInBsYXRmb3JtIjoiMDAiLCJ1dWlkIjoiMTdlMGE4OGUtZTgzOS00YjE2LTg5ZTItOWQwNDBjNDliMmJkIn0=.eyJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImxhbmd1YWdlSWQiOjJ9.e30=.b94d986eabf78a88baf9f72d342910e0ca396bec77bd4539cb51201b48f306f3';
     const functionName = 'getUserWishlist';
 
     const url = `${baseUrl}/api/new-orchestrator/getUser/api/wishList/all/page`;
@@ -27,7 +27,7 @@ function getUserWishlist(baseUrl, cookie) {
 }
 
 function getAllInterestsByLanguageId(baseUrl, cookie) {
-    const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6IkdldEFsbEludGVyZXN0c0J5TGFuZ3VhZ2VJZCIsInRpbWVzdGFtcCI6IjE3MTAyNzk4NTI1OTAiLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6ImZjMDg2ODNjLWJiNmMtNDI2MC05MDZlLWVkOGNmMmI1MTdkZSJ9.eyJsYW5ndWFnZUlkIjoyfQ==.e30=.726b783ab7a94f061103ec1c1a5f2b38711d0ff5ce2cbbc68e65a128379e193f';
+    const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6IkdldEFsbEludGVyZXN0c0J5TGFuZ3VhZ2VJZCIsInRpbWVzdGFtcCI6IjE3MzA2NDIyODc5NjMiLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6IjE3ZTBhODhlLWU4MzktNGIxNi04OWUyLTlkMDQwYzQ5YjJiZCJ9.eyJsYW5ndWFnZUlkIjoyfQ==.e30=.dd8cda83a5c569672f9fa605f4a842360873d5e0f08865e8fea5a2c936eb2c28';
     const functionName = 'getAllInterestsByLanguageId';
 
     const url = `${baseUrl}/api/new-orchestrator/getUser/api/users/GetAllInterestsByLanguageId`;

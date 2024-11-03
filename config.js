@@ -4,5 +4,5 @@ export const Config = {
     RAMP_UP_DURATION: 30,
     STABLE_DURATION: 11,
     RAMP_DOWN_DURATION: 30,
-    BASE_URL: 'https://api-gateway.almentor-mail.com'
+    BASE_URL: 'https://api-gateway.almentor.net'
 };

@@ -6,7 +6,7 @@ function getFeaturedCourses(baseUrl, cookie) {
 
     const url = `${baseUrl}/getCourse/api/courses/featured-courses`;
     const functionName = 'getFeaturedCourses';
-    
+
 
     const headers = {
         'authority': baseUrl,
@@ -17,7 +17,7 @@ function getFeaturedCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     const expectedSize = 10;
     check(response, {
@@ -30,11 +30,11 @@ function getFeaturedCourses(baseUrl, cookie) {
 
 
 function myProgressCarousel(baseUrl, cookie) {
-    const payload = 'eyJzZW5kZXIiOiJteS1wcm9ncmVzcyIsInJlY2VpdmVyIjoibXktcHJvZ3Jlc3MtY2Fyb3VzZWwiLCJ0aW1lc3RhbXAiOiIxNzEwMjc3NzgwMjk3IiwicGxhdGZvcm0iOiIwMCIsInV1aWQiOiJmYzA4NjgzYy1iYjZjLTQyNjAtOTA2ZS1lZDhjZjJiNTE3ZGUifQ==.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImZpbHRlciI6e319.e30=.a4d9a2cd44493338a6a39a5f5e81187bb7b0e264e6fdfa9d0a58598dc560a42d';
+    const payload = 'eyJzZW5kZXIiOiJteS1wcm9ncmVzcyIsInJlY2VpdmVyIjoibXktcHJvZ3Jlc3MtY2Fyb3VzZWwiLCJ0aW1lc3RhbXAiOiIxNzMwNjUwMjUwOTI2IiwicGxhdGZvcm0iOiIwMCIsInV1aWQiOiIxN2UwYTg4ZS1lODM5LTRiMTYtODllMi05ZDA0MGM0OWIyYmQifQ==.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjo1LCJwYWdlIjowfSwiZmlsdGVyIjp7fX0=.e30=.2bc0b92563a4f9402064d0391b3c9cf51d50aa0f34d387909e61d17c7a5268e9';
 
     const url = `${baseUrl}/api/new-orchestrator/getCourseProgres/api/b2b/my-progress-carousel`;
     const functionName = 'myProgressCarousel';
-    
+
     const headers = {
         'authority': baseUrl,
         'accept': 'application/json, text/plain, */*',
@@ -44,7 +44,7 @@ function myProgressCarousel(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -58,7 +58,7 @@ function getMostViewedCourses(baseUrl, cookie) {
     const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6InBvcHVsYXItY291cnNlcyIsInRpbWVzdGFtcCI6IjE3MTAyNzc3ODAzMDIiLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6ImZjMDg2ODNjLWJiNmMtNDI2MC05MDZlLWVkOGNmMmI1MTdkZSJ9.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImZpbHRlck1hcCI6e319.e30=.56d892fef20bca9e898533011283c4dbff7efa9c683e5d9505cc2d45835c6f1f';
     const functionName = 'getMostViewedCourses';
     const url = `${baseUrl}/getCourse/api/courses/most-viewed-courses`;
-    
+
 
     const headers = {
         'authority': baseUrl,
@@ -69,7 +69,7 @@ function getMostViewedCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     const expectedSize = 10;
     check(response, {
@@ -81,10 +81,10 @@ function getMostViewedCourses(baseUrl, cookie) {
 
 
 function getPopularCourses(baseUrl, cookie) {
-    const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6InBvcHVsYXItY291cnNlcyIsInRpbWVzdGFtcCI6IjE3MTAyNzc3ODAzMDQiLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6ImZjMDg2ODNjLWJiNmMtNDI2MC05MDZlLWVkOGNmMmI1MTdkZSJ9.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImZpbHRlck1hcCI6e319.e30=.ca1178cd8ff407d2eaf3ad6e8d58336f626d784d6d135039dbf4ef613383d4f6';
-    const functionName = 'getMostViewedCourses';
+    const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6InBvcHVsYXItY291cnNlcyIsInRpbWVzdGFtcCI6IjE3MzA2NjA2MzgzMzkiLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6IjE3ZTBhODhlLWU4MzktNGIxNi04OWUyLTlkMDQwYzQ5YjJiZCJ9.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImZpbHRlck1hcCI6e319.e30=.8700dbf3d7b46f374a01a54755381636d934f339a12c82c80f38ce076566e8f2';
+    const functionName = 'getPopularCourses';
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/popular-courses`;
-    
+
 
     const headers = {
         'authority': baseUrl,
@@ -95,7 +95,7 @@ function getPopularCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     const expectedSize = 10;
     check(response, {
@@ -112,7 +112,7 @@ function getNewCourses(baseUrl, cookie) {
 
     const url = `${baseUrl}/getCourse/api/courses/getNewCourses`;
 
-    
+
 
     const headers = {
         'authority': baseUrl,
@@ -123,7 +123,7 @@ function getNewCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     const expectedSize = 10;
     check(response, {
@@ -140,7 +140,7 @@ function getPickOfTheDay(baseUrl, cookie) {
     const functionName = 'getPickOfTheDay';
 
     const url = `${baseUrl}/getCourse/api/courses/picksOfTheDay`;
-    
+
 
     const headers = {
         'authority': baseUrl,
@@ -151,7 +151,7 @@ function getPickOfTheDay(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -166,7 +166,7 @@ function getCourseDetails(baseUrl) {
 
     const url = `${baseUrl}/Home/graphql`;
 
-    
+
 
     const headers = {
         'authority': baseUrl,
@@ -177,7 +177,7 @@ function getCourseDetails(baseUrl) {
 
     const response = http.post(url, payload, {headers});
 
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -190,7 +190,7 @@ function getCourseDiscovery(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/courses-discovery`;
     const functionName = 'getCourseDiscovery';
-    
+
 
     const headers = {
         'authority': baseUrl,
@@ -212,7 +212,7 @@ function getCourseDiscovery(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -222,12 +222,12 @@ function getCourseDiscovery(baseUrl, cookie) {
 }
 
 function getTrendingCourses(baseUrl, cookie) {
-    const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6InBvcHVsYXItY291cnNlcyIsInRpbWVzdGFtcCI6IjE3MzA2NDU0MjI0MTAiLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6ImU2ODRmZWJmLThjMDctNGQxNy04ZTliLTYwOWNlMDk4M2MyYSJ9.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImZpbHRlck1hcCI6e319.e30=.6987a06ddb6c9791122f7795875f4b1db5d0f6d3ec3d9e977c8fcb464f53fcb5';
+    const payload = 'eyJzZW5kZXIiOiJhdXRob3JpemVkLWhvbWUiLCJyZWNlaXZlciI6InBvcHVsYXItY291cnNlcyIsInRpbWVzdGFtcCI6IjE3MzA2NDIyODc5NDciLCJwbGF0Zm9ybSI6IjAwIiwidXVpZCI6IjE3ZTBhODhlLWU4MzktNGIxNi04OWUyLTlkMDQwYzQ5YjJiZCJ9.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MH0sImZpbHRlck1hcCI6e319.e30=.65fe3dd01820c9b0cc34497807313884746530f8ed5d30b652a07287b5b526f5';
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/trending-courses`;
     const functionName = 'getTrendingCourses';
-    
-    cookie='alm-device-uid=83d5e0a9-c31d-4196-b80e-ba99e7a39930; _gcl_au=1.1.1548516614.1730360160; _scid=pHCDbdDSZvyVkOClqN92vqSFT-fOkFib; _hjSessionUser_2610635=eyJpZCI6IjI5NzY1OGZlLTM4YjktNWRkNy04ZjU0LWU3YjViNWJkOTQxNSIsImNyZWF0ZWQiOjE3MzAzNjAxNjAxNjYsImV4aXN0aW5nIjp0cnVlfQ==; _gid=GA1.2.1762868036.1730621989; token=2zzU2hSgNVx9W8viFr0VNZ3B3NuCZ%2F9YiF1sM5UBQObzV0WqZT4Nuy2wmPJi3RFKvDcCoy6oOWnMdMhz5qcuKo168cOE5fPvUP9MRPhK%2BtMmkIgLytNWZhsusyRUcOx15PF7VGdNwmw%3D; device=6aae264f-78a2-4c20-89b1-ca788b0ac9e5; alm-user=W3sibGFuZyI6ImFyIn0seyJ0aGVtZSI6MH0seyJ1c2VyIjp7InV1aWQiOiJlNjg0ZmViZi04YzA3LTRkMTctOGU5Yi02MDljZTA5ODNjMmEiLCJ0eXBlIjoxLCJsaW5rIjoiaHR0cHM6Ly9iZXRhLXByZXByb2QtYXV0aG9yaXplZC5hbG1lbnRvci1tYWlsLmNvbSJ9fV0%3D; alm-gtm-global-prop=eyJ0aF9jYXBpX2VtIjoiNjljZTRjM2MwZWU3OGMxYTA2Y2U5NjJjMzM2NWNmYzgyYjJmMDkzZGU5NTdjZDUwMWQwODUyZjk2YmEwY2VlOSIsInRoX2NhcGlfZm4iOiIwNTU2NTRlOWQ3OWIwYmZhZjA1MzJjNjY4ZTZiMDNjMTE2NzdhNmMwNjBiMWZkYmM5NGYxNGY1YTgzY2RhNTc0IiwidXNlcl9jb3VudHJ5IjoiRUcifQ%3D%3D; alm-push-request=1730798115517; alm-sub-init=%7B%22url%22%3A%22%2F%22%2C%22title%22%3A%22Learning%20is%20a%20life\'s%20journey%20%7C%20almentor%22%7D; _scid_r=tfCDbdDSZvyVkOClqN92vqSFT-fOkFibY8eD9Q; cto_bundle=CjLKRV9FZXVXRnRTaWtIb1o5aFY1M2pJbGFITTJXdDd6eW5EZ0VYcW1oOUpuUnhJQSUyQjlDMHBYQXQ1TFVTMGo0OG1UZ1dTRmpPUE5uM1JEMmtGT2dGSmg3bk9IRnJBb0t3djVuNjdjakhuSHRjSDk2TWRyMG9GaEdBU216NTdESDlBN1FpYlh1THFBWDJLSjVzem9PJTJCVGxrSjBQbnkzRyUyRnhKRmFPajkwSzNLYWE4ViUyRmQyUkNLZlQyWHBJQVBsVHFrZlRoeWVFOGI1Mm1VNW96eCUyQjk0cEQyT29raEZtVHNtVmtmbks5VjB1aUtJJTJCTlBYM0ZZUXRYTFVya2xuQUdVRWtCV2FVcGhPV0dFTlFrbHBHVkZQMnhWbzJHUSUzRCUzRA; _ga=GA1.2.816515942.1730360160; _hjSession_2610635=eyJpZCI6ImQzYmJhNTRhLWFkNjEtNGEwMy04MGU0LTkwYmUwYmE3MGQ3YSIsImMiOjE3MzA2NDQyNDA4NTMsInMiOjEsInIiOjEsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MX0=; _ga_ZBHQ56110R=GS1.2.1730645422.6.1.1730645422.0.0.0; _ga_036Y5CBY4L=GS1.1.1730645422.7.0.1730645701.0.0.0; ab.storage.sessionId.84c4b8da-627b-4674-afc0-9e86a12265f0=%7B%22g%22%3A%22e037fc14-6529-046e-d832-a0baf818ac8a%22%2C%22e%22%3A1730647505001%2C%22c%22%3A1730645705001%2C%22l%22%3A1730645705001%7D; ab.storage.deviceId.84c4b8da-627b-4674-afc0-9e86a12265f0=%7B%22g%22%3A%223ee2eab4-fd8c-3647-e032-324674de30d2%22%2C%22c%22%3A1730360194157%2C%22l%22%3A1730645705002%7D; ab.storage.userId.84c4b8da-627b-4674-afc0-9e86a12265f0=%7B%22g%22%3A%22e684febf-8c07-4d17-8e9b-609ce0983c2a%22%2C%22c%22%3A1730622069318%2C%22l%22%3A1730645705003%7D';  //TEMP
+
+    cookie='_gcl_au=1.1.1244814011.1730407096; _scid=oi_q-IwAWsd9egnPEtET_6s0pnJ9io6U; _tt_enable_cookie=1; _ttp=WnJTum-VGyatX4x1IZrRP7yJBt5; th_capi_fn=30cb9023a560ca7c3b7081bd319b378ff82f015cafb8e322f1188642c3aa1b9f; th_capi_em=17550f03a4b68ee034bb5fbf4d9f7618eca9cb8bbebdb0696ec81429d284bcc5; stape_mixpanel_initial_referrer=https%3A%2F%2Faccount.almentor.net%2F; _ScCbts=%5B%22215%3Bchrome.2%3A2%3A5%22%5D; _sctr=1%7C1730322000000; _hjSessionUser_2590718=eyJpZCI6IjU5MzRlNDg4LTRiOTItNWJhNS1hOWQ2LWI2YjkxYjFjNGU4ZiIsImNyZWF0ZWQiOjE3MzA0MDcxMzQ0NDgsImV4aXN0aW5nIjp0cnVlfQ==; _gid=GA1.2.2081162525.1730547014; alm-sub-init=%7B%22url%22%3A%22%2Fhome%22%2C%22title%22%3A%22%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%85%20%D8%B1%D8%AD%D9%84%D8%A9%20%D8%AD%D9%8A%D8%A7%D8%A9%20%7C%20almentor%22%7D; _dcid=dcid.1.1730621987803.470454589; ab.storage.sessionId.18e6f6b3-5ba4-45af-967e-9f0c90cce1a9=%7B%22g%22%3A%22994ebc77-af47-4d6f-9770-dd4267e080bf%22%2C%22e%22%3A1730643886669%2C%22c%22%3A1730642086669%2C%22l%22%3A1730642086669%7D; ab.storage.deviceId.18e6f6b3-5ba4-45af-967e-9f0c90cce1a9=%7B%22g%22%3A%228cc480ff-8f80-6403-edde-bbdd99eaddf7%22%2C%22c%22%3A1730407132315%2C%22l%22%3A1730642086670%7D; ab.storage.userId.18e6f6b3-5ba4-45af-967e-9f0c90cce1a9=%7B%22g%22%3A%229f36201d-7ac6-4c1f-a27a-572ecc5aadb7%22%2C%22c%22%3A1730407132322%2C%22l%22%3A1730642086670%7D; _hjSession_2590718=eyJpZCI6IjgyNWY5YmJmLWNjYmItNDBkNS1iMjE0LTYzZTE4MmE5ZGI1MCIsImMiOjE3MzA2NDIwODkwOTYsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MH0=; alm-device-uid=bc7d0166-b212-47aa-af05-6c7a5b30d30b; _ga=GA1.2.105277857.1730407097; _gat_UA-207772086-2=1; _scid_r=ta_q-IwAWsd9egnPEtET_6s0pnJ9io6U3ckgOA; cto_bundle=3qUR2F9YdDI4YVZJbG1aMFRqZWMlMkJhaTRpT3FkTEVNc1ZYdHYlMkJqa2tqZUlEaHhITjRXTFVaam1zaDJUZVQ1aUclMkJCTHc1YzJaRU1vY0V0eUlidlNZNVQlMkIlMkY2YWw4cVBVbkE1dTlzbm94JTJGajR1Wk45c0hMMTlKRklkUEVPOFZWWmxYMFk2ZUNrJTJGN0hVVTBsOGtvSUxTb1NmRndLR3djVHkzSThDSTJFVDFvdXNRUGtsYWIxSDdnNVJBTUxxOXZOTDJ0MEx6YVNmQWE0Q3ZsUjd6cjFMU0NUeWoxSUElM0QlM0Q; token=z14pnGfnlwEd1JojsKSZqxz8MAEp%2FFcdJaJhLnBYbjZNKsMNtlUTxXl3vGpiNurhQw%2BqfWIswtZMd0QG4dLknkl3EVtV2SeAzBcB%2BjPdZwZkfZa3z63KqSYDq9SlnaXph4brxOGtDH0%3D; device=88ea2a4b-2862-4aea-a0d6-11dbe07eec6a; alm-user=W3sibGFuZyI6ImFyIn0seyJ0aGVtZSI6MH0seyJ1c2VyIjp7InV1aWQiOiIxN2UwYTg4ZS1lODM5LTRiMTYtODllMi05ZDA0MGM0OWIyYmQiLCJ0eXBlIjowLCJsaW5rIjpudWxsfX1d; _ga_HBN3GYESRR=GS1.1.1730642089.6.1.1730642285.46.0.0; alm-gtm-global-prop=eyJ0aF9jYXBpX2VtIjoiYTY5YTc4ZmYyZWU1NTliYzQ3MzAzZmVkMjMzZTZjMDFkYWU4NzQxODQ2MWI0Yzg2ZTQ1NWU2ZmJhYjRjMDg4MCIsInRoX2NhcGlfZm4iOiIzMGNiOTAyM2E1NjBjYTdjM2I3MDgxYmQzMTliMzc4ZmY4MmYwMTVjYWZiOGUzMjJmMTE4ODY0MmMzYWExYjlmIiwidXNlcl9jb3VudHJ5IjoiRUcifQ%3D%3D';  //TEMP
     const headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-language': 'ar',
@@ -247,7 +247,7 @@ function getTrendingCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -257,20 +257,20 @@ function getTrendingCourses(baseUrl, cookie) {
 }
 
 function getFilterCourses(baseUrl, cookie) {
-    const payload = 'eyJzZW5kZXIiOiJicm93c2UtY291cnNlcy1wYWdlIiwicmVjZWl2ZXIiOiJmaWx0ZXIiLCJ0aW1lc3RhbXAiOiIxNzMwNjQ1NDIyNDM2IiwicGxhdGZvcm0iOiIwMCIsInV1aWQiOiJlNjg0ZmViZi04YzA3LTRkMTctOGU5Yi02MDljZTA5ODNjMmEifQ==.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MCwic29ydCI6InJlbGVhc2VkQXQsZGVzYyJ9LCJmaWx0ZXJNYXAiOnsiaXNTcG9uc29yZWQiOjF9fQ==.e30=.c49c7f22949e79910cfc0201cf6285f6901b357fbd5072f09b486eb9afc13f5c';
+    const payload = 'eyJzZW5kZXIiOiJicm93c2UtY291cnNlcy1wYWdlIiwicmVjZWl2ZXIiOiJmaWx0ZXIiLCJ0aW1lc3RhbXAiOiIxNzMwNjUwNjI5MzEyIiwicGxhdGZvcm0iOiIwMCIsInV1aWQiOiIxN2UwYTg4ZS1lODM5LTRiMTYtODllMi05ZDA0MGM0OWIyYmQifQ==.eyJsYW5ndWFnZUlkIjoyLCJwYWdpbmF0aW9uUmVxdWVzdCI6eyJzaXplIjoxNSwicGFnZSI6MCwic29ydCI6InJlbGVhc2VkQXQsZGVzYyJ9LCJmaWx0ZXJNYXAiOnsiaXNTcG9uc29yZWQiOjF9fQ==.e30=.af66112e9e9fd1d95c39a8b074aee181141f7fd959401c1e4d10424504ed4a5c';
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/filter`;
     const functionName = 'getFilterCourses';
-    cookie='alm-device-uid=83d5e0a9-c31d-4196-b80e-ba99e7a39930; _gcl_au=1.1.1548516614.1730360160; _scid=pHCDbdDSZvyVkOClqN92vqSFT-fOkFib; _hjSessionUser_2610635=eyJpZCI6IjI5NzY1OGZlLTM4YjktNWRkNy04ZjU0LWU3YjViNWJkOTQxNSIsImNyZWF0ZWQiOjE3MzAzNjAxNjAxNjYsImV4aXN0aW5nIjp0cnVlfQ==; _gid=GA1.2.1762868036.1730621989; token=2zzU2hSgNVx9W8viFr0VNZ3B3NuCZ%2F9YiF1sM5UBQObzV0WqZT4Nuy2wmPJi3RFKvDcCoy6oOWnMdMhz5qcuKo168cOE5fPvUP9MRPhK%2BtMmkIgLytNWZhsusyRUcOx15PF7VGdNwmw%3D; device=6aae264f-78a2-4c20-89b1-ca788b0ac9e5; alm-user=W3sibGFuZyI6ImFyIn0seyJ0aGVtZSI6MH0seyJ1c2VyIjp7InV1aWQiOiJlNjg0ZmViZi04YzA3LTRkMTctOGU5Yi02MDljZTA5ODNjMmEiLCJ0eXBlIjoxLCJsaW5rIjoiaHR0cHM6Ly9iZXRhLXByZXByb2QtYXV0aG9yaXplZC5hbG1lbnRvci1tYWlsLmNvbSJ9fV0%3D; alm-gtm-global-prop=eyJ0aF9jYXBpX2VtIjoiNjljZTRjM2MwZWU3OGMxYTA2Y2U5NjJjMzM2NWNmYzgyYjJmMDkzZGU5NTdjZDUwMWQwODUyZjk2YmEwY2VlOSIsInRoX2NhcGlfZm4iOiIwNTU2NTRlOWQ3OWIwYmZhZjA1MzJjNjY4ZTZiMDNjMTE2NzdhNmMwNjBiMWZkYmM5NGYxNGY1YTgzY2RhNTc0IiwidXNlcl9jb3VudHJ5IjoiRUcifQ%3D%3D; alm-push-request=1730798115517; alm-sub-init=%7B%22url%22%3A%22%2F%22%2C%22title%22%3A%22Learning%20is%20a%20life\'s%20journey%20%7C%20almentor%22%7D; _scid_r=tfCDbdDSZvyVkOClqN92vqSFT-fOkFibY8eD9Q; cto_bundle=CjLKRV9FZXVXRnRTaWtIb1o5aFY1M2pJbGFITTJXdDd6eW5EZ0VYcW1oOUpuUnhJQSUyQjlDMHBYQXQ1TFVTMGo0OG1UZ1dTRmpPUE5uM1JEMmtGT2dGSmg3bk9IRnJBb0t3djVuNjdjakhuSHRjSDk2TWRyMG9GaEdBU216NTdESDlBN1FpYlh1THFBWDJLSjVzem9PJTJCVGxrSjBQbnkzRyUyRnhKRmFPajkwSzNLYWE4ViUyRmQyUkNLZlQyWHBJQVBsVHFrZlRoeWVFOGI1Mm1VNW96eCUyQjk0cEQyT29raEZtVHNtVmtmbks5VjB1aUtJJTJCTlBYM0ZZUXRYTFVya2xuQUdVRWtCV2FVcGhPV0dFTlFrbHBHVkZQMnhWbzJHUSUzRCUzRA; _ga=GA1.2.816515942.1730360160; _hjSession_2610635=eyJpZCI6ImQzYmJhNTRhLWFkNjEtNGEwMy04MGU0LTkwYmUwYmE3MGQ3YSIsImMiOjE3MzA2NDQyNDA4NTMsInMiOjEsInIiOjEsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MX0=; _ga_ZBHQ56110R=GS1.2.1730645422.6.1.1730645422.0.0.0; _ga_036Y5CBY4L=GS1.1.1730645422.7.0.1730645701.0.0.0; ab.storage.sessionId.84c4b8da-627b-4674-afc0-9e86a12265f0=%7B%22g%22%3A%22e037fc14-6529-046e-d832-a0baf818ac8a%22%2C%22e%22%3A1730647505001%2C%22c%22%3A1730645705001%2C%22l%22%3A1730645705001%7D; ab.storage.deviceId.84c4b8da-627b-4674-afc0-9e86a12265f0=%7B%22g%22%3A%223ee2eab4-fd8c-3647-e032-324674de30d2%22%2C%22c%22%3A1730360194157%2C%22l%22%3A1730645705002%7D; ab.storage.userId.84c4b8da-627b-4674-afc0-9e86a12265f0=%7B%22g%22%3A%22e684febf-8c07-4d17-8e9b-609ce0983c2a%22%2C%22c%22%3A1730622069318%2C%22l%22%3A1730645705003%7D'
+    cookie = '_gcl_au=1.1.1244814011.1730407096; _scid=oi_q-IwAWsd9egnPEtET_6s0pnJ9io6U; _tt_enable_cookie=1; _ttp=WnJTum-VGyatX4x1IZrRP7yJBt5; th_capi_fn=30cb9023a560ca7c3b7081bd319b378ff82f015cafb8e322f1188642c3aa1b9f; stape_mixpanel_initial_referrer=https%3A%2F%2Faccount.almentor.net%2F; _ScCbts=%5B%22215%3Bchrome.2%3A2%3A5%22%5D; _sctr=1%7C1730322000000; _hjSessionUser_2590718=eyJpZCI6IjU5MzRlNDg4LTRiOTItNWJhNS1hOWQ2LWI2YjkxYjFjNGU4ZiIsImNyZWF0ZWQiOjE3MzA0MDcxMzQ0NDgsImV4aXN0aW5nIjp0cnVlfQ==; _gid=GA1.2.2081162525.1730547014; alm-sub-init=%7B%22url%22%3A%22%2Fhome%22%2C%22title%22%3A%22%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%85%20%D8%B1%D8%AD%D9%84%D8%A9%20%D8%AD%D9%8A%D8%A7%D8%A9%20%7C%20almentor%22%7D; alm-device-uid=bc7d0166-b212-47aa-af05-6c7a5b30d30b; token=z14pnGfnlwEd1JojsKSZqxz8MAEp%2FFcdJaJhLnBYbjZNKsMNtlUTxXl3vGpiNurhQw%2BqfWIswtZMd0QG4dLknkl3EVtV2SeAzBcB%2BjPdZwZkfZa3z63KqSYDq9SlnaXph4brxOGtDH0%3D; device=88ea2a4b-2862-4aea-a0d6-11dbe07eec6a; alm-user=W3sibGFuZyI6ImFyIn0seyJ0aGVtZSI6MH0seyJ1c2VyIjp7InV1aWQiOiIxN2UwYTg4ZS1lODM5LTRiMTYtODllMi05ZDA0MGM0OWIyYmQiLCJ0eXBlIjowLCJsaW5rIjpudWxsfX1d; alm-gtm-global-prop=eyJ0aF9jYXBpX2VtIjoiYTY5YTc4ZmYyZWU1NTliYzQ3MzAzZmVkMjMzZTZjMDFkYWU4NzQxODQ2MWI0Yzg2ZTQ1NWU2ZmJhYjRjMDg4MCIsInRoX2NhcGlfZm4iOiIzMGNiOTAyM2E1NjBjYTdjM2I3MDgxYmQzMTliMzc4ZmY4MmYwMTVjYWZiOGUzMjJmMTE4ODY0MmMzYWExYjlmIiwidXNlcl9jb3VudHJ5IjoiRUcifQ%3D%3D; ab.storage.deviceId.18e6f6b3-5ba4-45af-967e-9f0c90cce1a9=%7B%22g%22%3A%228cc480ff-8f80-6403-edde-bbdd99eaddf7%22%2C%22c%22%3A1730407132315%2C%22l%22%3A1730642288115%7D; ab.storage.userId.18e6f6b3-5ba4-45af-967e-9f0c90cce1a9=%7B%22g%22%3A%2217e0a88e-e839-4b16-89e2-9d040c49b2bd%22%2C%22c%22%3A1730642288113%2C%22l%22%3A1730642288116%7D; th_capi_em=a69a78ff2ee559bc47303fed233e6c01dae87418461b4c86e455e6fbab4c0880; _dcid=dcid.1.1730645422630.409798826; ab.storage.sessionId.18e6f6b3-5ba4-45af-967e-9f0c90cce1a9=%7B%22g%22%3A%22e73c9105-fc7e-f874-7caf-2ecf1b08b737%22%2C%22e%22%3A1730652050885%2C%22c%22%3A1730649578179%2C%22l%22%3A1730650250885%7D; _scid_r=x6_q-IwAWsd9egnPEtET_6s0pnJ9io6U3ckgOg; cto_bundle=UimsSl9YdDI4YVZJbG1aMFRqZWMlMkJhaTRpT3RBZGVFcGk1OTRkTXlIamhTRE94U2JzeGtCMTdjcDEzblolMkJjOENRUUglMkJjVzNWTWlwTjdyQUtRV0djY2lKTUthc3ltaGkyNHg3OU5PZTdoaFh6TkZHa0Z5NW9LSTg4ME12N3RnQnglMkIlMkZiMUdRZTdrVyUyRm9YWjE2WTd2bDhxYmdMWFIzNFAzU2lCUFVMRzAlMkZQRDRLSjYlMkIyVEhkM0Nrc3c4VWZHZDZuOGZBYTNOdWNBb2VtanNDbkZ6ejhTc1Z5YktWdyUzRCUzRA; _hjSession_2590718=eyJpZCI6ImUwZDkyMWEzLTZjODItNDhjNS04YWFkLTZjMDE4MjExNTY0OCIsImMiOjE3MzA2NTAyNTQzODYsInMiOjAsInIiOjAsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjowLCJzcCI6MH0=; _ga=GA1.2.105277857.1730407097; _gat_UA-207772086-2=1; _ga_HBN3GYESRR=GS1.1.1730650247.7.1.1730650627.60.0.0';
     const headers = {
         'accept': 'application/json, text/plain, */*',
         'accept-language': 'ar',
         'content-type': 'text/plain',
-        'Cookie': cookie,
-        'origin': 'https://beta-preprod-authorized.almentor-mail.com',
+        'cookie': cookie,
+        'origin': baseUrl,
         'priority': 'u=1, i',
-        'referer': 'https://beta-preprod-authorized.almentor-mail.com/',
-        'requester-app': 'B2C_WEB',
+        'referer': baseUrl,
+        'requester-app': 'ANONYMOUS_WEB',
         'sec-ch-ua': '"Chromium";v="130", "Google Chrome";v="130", "Not?A_Brand";v="99"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': '"Windows"',
@@ -281,7 +281,7 @@ function getFilterCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -295,7 +295,7 @@ function getCourseIdPermanentLink(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/id/permanentLink`;
     const functionName = 'getCourseIdPermanentLink';
-    
+
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -316,7 +316,7 @@ function getCourseIdPermanentLink(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -330,7 +330,7 @@ function getCourseCategories(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/id/category`;
     const functionName = 'getCourse';
-    
+
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -351,7 +351,7 @@ function getCourseCategories(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -366,7 +366,7 @@ function getBenefitsAndPrerequisites(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/BenefitsAndPrerequisites`;
     const functionName = 'getBenefitsAndPrerequisites';
-    
+
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -387,7 +387,7 @@ function getBenefitsAndPrerequisites(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -402,7 +402,7 @@ function getRelatedCourses(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/new-orchestrator/getCourse/api/courses/related`;
     const functionName = 'getRelatedCourses';
-    
+
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -423,7 +423,7 @@ function getRelatedCourses(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,
@@ -438,7 +438,7 @@ function getCourseCurriculum(baseUrl, cookie) {
 
     const url = `${baseUrl}/api/orchestrator/api/courses/simple/curriculum`;
     const functionName = 'getCourseCurriculum';
-    
+
 
     const headers = {
         'accept': 'application/json, text/plain, */*',
@@ -459,7 +459,7 @@ function getCourseCurriculum(baseUrl, cookie) {
     };
 
     const response = http.post(url, payload, {headers});
-    
+    console.log(`${functionName} response is `, response.body);
 
     check(response, {
         [`${functionName} - response status is 200`]: (r) => r.status === 200,

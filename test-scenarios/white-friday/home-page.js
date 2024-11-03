@@ -47,7 +47,7 @@ function authenticatedUserFlow(cookie) {
     topTemp(baseUrl, cookie);
     getCourseDiscovery(baseUrl, cookie);
     getPopularCourses(baseUrl, cookie);
-   getTrendingCourses(baseUrl, cookie);
+    getTrendingCourses(baseUrl, cookie);
     getUserWishlist(baseUrl, cookie);
     getAllInterestsByLanguageId(baseUrl, cookie);
     getFilterCourses(baseUrl, cookie);
